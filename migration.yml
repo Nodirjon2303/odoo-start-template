@@ -1,0 +1,8 @@
+migration:
+  options:
+    install_command: odoo --without-demo=${WITHOUT_DEMO:-True}
+  versions:
+    - version: setup
+      operations:
+        pre:
+          - 'sh -c ''psql -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"'''

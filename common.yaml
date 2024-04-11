@@ -1,0 +1,20 @@
+version: "2.4"
+
+services:
+  odoo:
+    build:
+      context: .
+    # ports:
+    #   - 8069:8069
+    #   - 8072:8072
+    tty: true
+    volumes:
+      - data-odoo:/odoo/data/odoo/
+
+  db:
+    image: docker.io/postgres:15
+    volumes:
+      - db:/var/lib/postgresql/data:z
+
+  smtpfake:
+    image: richarvey/mailhog

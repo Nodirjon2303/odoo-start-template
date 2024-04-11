@@ -1,0 +1,49 @@
+./src/odoo/:
+  defaults:
+    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
+    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
+    # for a sane value of 100 commits)
+    depth: 1
+  remotes:
+    ocb: https://github.com/OCA/OCB.git
+  target: ocb 17.0
+  merges:
+    - ocb 17.0
+    # Example of a merge of the PR with the number <PR>
+    # - oca refs/pull/<PR>/head
+
+./src/addons/operating-unit:
+  defaults:
+    depth: 1
+  remotes:
+    operating-unit: https://github.com/OCA/operating-unit.git
+    target: operating-unit 17.0
+  merges:
+    - operating-unit 17.0
+
+./src/addons/server-brand:
+  defaults:
+    depth: 1
+  remotes:
+    server_brand: https://github.com/OCA/server-brand.git
+    target: server_brand 17.0
+  merges:
+    - server_brand 17.0
+
+./src/addons/server-tools:
+  defaults:
+    depth: 1
+  remotes:
+    server_tools: https://github.com/OCA/server-tools.git
+    target: server_tools 17.0
+  merges:
+    - server_tools 17.0
+
+./src/addons/oca-web:
+  defaults:
+    depth: 1
+  remotes:
+    oca_web: https://github.com/OCA/web.git
+    target: oca_web 17.0
+  merges:
+    - oca_web 17.0
